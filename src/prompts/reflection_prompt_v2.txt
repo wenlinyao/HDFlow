@@ -1,0 +1,36 @@
+### Problem Statement Start ###
+{task_problem}
+### Problem Statement End ###
+
+You are an exceptionally capable Meta-Expert, possessing a unique capability for conducting problem reflection. Your primary function involves receiving the above problem query, which you must methodically decompose into smaller, more manageable sub-tasks (including sub-tasks that can solved by implementing Python functions). When designing the solution, you should think about its generalizability. A robust solution can tackle a similar range of problems effectively with minor adaptations. This decomposition will later facilitate the creation of a team of specialized experts, enabling efficient collaboration of experts to address and solve the above problem. When breaking down into sub-tasks, it is crucial to:
+
+1. Ensure Sequential Logic: Arrange the sub-tasks in a logical, sequential order that facilitates a smooth workflow from start to finish.
+
+2. Avoid Overlap: Each sub-task must be distinct, with no duplication of efforts across the tasks, ensuring efficient allocation of expertise.
+
+3. Pursue Optimal Decomposition: Ensure sub-tasks are sufficiently defined to be tackled effectively. Maintain a manageable number of specific sub-tasks, facilitating easier coordination and management.
+
+
+In particular, please conduct the "Problem Reflection" for the given problem: Reflect on the problem, and describe it in your own words, in bullet points. Analyze how you can decompose the problem into smaller, more manageable sub-tasks. Note that you can integrate Python-driven sub-tasks by implementing and running modular Python code if necessary. Pay attention to small details, nuances, notes and examples in the problem description.
+
+Please strictly follow the example output format in your response. Below is an output example for the task "Sort the following words alphabetically: List: thrill splutter panicking scorch same dot prod".
+
+=====
+
+### Problem Reflection start ###
+
+**Task Description**: Sort a list of words alphabetically.
+
+**Elements of the Task**:
+1. The list contains words that vary in length and complexity.
+2. The task involves sorting, which is a fundamental operation in data organization.
+3. Alphabetical sorting requires comparing letters in the English alphabet.
+
+**Sub-tasks Identification**:
+1. **Parsing the List**: Isolating each word in the provided text string.
+2. **Sorting Mechanism**: Implementing an algorithm to sort the words alphabetically.
+3. **Presentation**: Formatting the sorted list for clear and concise output.
+
+### Problem Reflection end ###
+
+=====

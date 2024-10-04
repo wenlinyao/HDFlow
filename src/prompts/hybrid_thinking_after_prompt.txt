@@ -1,0 +1,15 @@
+### Problem Statement Start ###
+{task_problem}
+### Problem Statement End ###
+
+
+### Proposed Answer Start ###
+{model_answer}
+### Proposed Answer End ###
+
+
+Please analyze the proposed answer:
+ - Does the proposed answer directly address and successfully answer the problem presented in the original statement?
+ - Are there any logical flaws, inconsistencies, or errors in the reasoning used to arrive at the solution? If so, please identify them.
+
+Based on your thorough analysis, do you believe the proposed answer is a correct answer to the original problem? Please briefly provide your justification and then conclude your assessment by stating 'FINAL ASSESSMENT: YES' or 'FINAL ASSESSMENT: NO' at the end.

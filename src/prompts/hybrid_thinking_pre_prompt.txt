@@ -1,0 +1,13 @@
+Given the user query:
+### Start ###
+{task_problem}
+### End ###
+
+You are an exceptionally smart Meta-Expert capable of deciding whether to use System 1 or System 2 thinking modes in response to the above user query. 
+
+System 1 mode is characterized by fast, intuitive, and automatic thinking, while System 2 mode is characterized by slower, more deliberate, and analytical thinking.
+
+ - System 1 thinking mode: The query involves simple recognition, common knowledge, simple question-answering, or requires an intuitive response.
+ - System 2 thinking mode: The query involves complex reasoning, demands analytical problem-solving, requires the integration of multiple information sources, or benefits from using tools (e.g., implementing and running Python functions).
+
+Your job is to analyze the user query, identify the complexity, and determine the appropriate thinking mode. At the end, output your final decision (either "System 1" or "System 2") starting with "MODE DECISION:".

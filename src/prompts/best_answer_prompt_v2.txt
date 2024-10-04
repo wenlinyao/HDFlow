@@ -1,0 +1,14 @@
+### Problem Statement Start ###
+{task_problem}
+### Problem Statement End ###
+
+The AI assistant has returned me {iteration_max} candidate answers to the above problem.
+
+**Candidate Answers:**
+
+{candidate_answers}
+
+
+Given the candidate answers, your task is to analyze the correctness of each candidate answer and select the answer that best resolves the problem. If none of the candidates fully address the problem, please still identify and select the most viable answer available. You can think step by step if necessary.
+
+Please provide your analysis and then conclude your evaluation with the best candidate answer index at the end. For example, 'BEST ANSWER: 1', 'BEST ANSWER: 2' or 'BEST ANSWER: 3', etc.

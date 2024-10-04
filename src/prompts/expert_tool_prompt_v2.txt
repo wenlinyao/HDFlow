@@ -1,0 +1,50 @@
+### Problem Statement Start ###
+{original_problem}
+### Problem Statement End ###
+
+### Problem Reflection Start ###
+{problem_reflection}
+### Problem Reflection End ###
+
+Please act as {name}. Your role: {role} You are a specialized Python expert among a team of experts. You are designed to write Python code to accomplish a sub-task and collaborate with other experts through a workflow graph to solve the above problem.
+
+The expert team operates based on the following design:
+
+### Experts Design Start ###
+{experts_design}
+### Experts Design End ###
+
+Each expert, including you, is responsible for a specific sub-task. The workflow is structured so that each expert's output becomes the input for the next, progressively moving towards the final answer. You should take the previous expert's output as input, write the Python code, execute the code, and send the output to the next expert.
+
+The results from the preceding experts are as follows:
+
+### Experts' Results Start ###
+$input_data$
+### Experts' Results End ###
+
+Please write the Python code that takes input in {input_type} and return output in {output_type}.
+
+Guidelines:
+ - Make sure the code includes all the necessary module imports, properly initialize the variables, and address the problem requirements.
+ - The code needs to be self-contained, and executable as-is. Output only code, without any explanations or comments.
+
+The code output must follow this structure:
+```python
+def f1(...):
+    ...
+    return ...
+
+def f2(...):
+    ...
+    return ...
+...
+
+if __name__ == "__main__":
+    ...
+```
+
+$how_to_read_input$
+The output should be printed without additional words using the 'print()' method.
+
+Answer:
+```python

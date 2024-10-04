@@ -1,0 +1,64 @@
+algorithms
+measures the ability of a model to execute algorithms
+
+Tasks: cs_algorithms, list_functions, long_context_integration, sudoku, word_sorting
+
+logical reasoning
+measures the ability of a model to reason about its inputs (eg, solve a word problem)
+
+Tasks: analytic_entailment, auto_categorization, auto_debugging, boolean_expressions, checkmate_in_one, chess_state_tracking, code_line_description, codenames, conlang_translation, context_definition_alignment, crass_ai, cryptonite, date_understanding, dyck_languages, dynamic_counting, elementary_math_qa, entailed_polarity, entailed_polarity_hindi, epistemic_reasoning, evaluating_information_essentiality, formal_fallacies_syllogisms_negation, gender_sensitivity_chinese, gender_sensitivity_english, gre_reading_comprehension, identify_math_theorems, intersect_geometry, kannada, key_value_maps, language_games, linguistics_puzzles, logic_grid_puzzle, logical_args, logical_deduction, logical_fallacy_detection, navigate, nonsense_words_grammar, object_counting, penguins_in_a_table, physics_questions, presuppositions_as_nli, program_synthesis, reasoning_about_colored_objects, repeat_copy_logic, rephrase, roots_optimization_and_games, simp_turing_concept, simple_text_editing, spelling_bee, strategyqa, sudoku, sufficient_information, symbol_interpretation, temporal_sequences, timedial, tracking_shuffled_objects, undo_permutation, unit_interpretation, web_of_lies, word_problems_on_sets_and_graphs
+
+implicit reasoning
+measures model's ability to infer implicit reasoning paths
+
+Tasks: anachronisms, bridging_anaphora_resolution_barqa, com2sense, context_definition_alignment, crass_ai, implicit_relations, list_functions, logical_args, minute_mysteries_qa, strategyqa, timedial, word_unscrambling
+
+mathematics
+measures model's ability to perform mathematics of any type (see sub-types below)
+
+Tasks: arithmetic, auto_debugging, checkmate_in_one, chinese_remainder_theorem, elementary_math_qa, geometric_shapes, identify_math_theorems, intersect_geometry, key_value_maps, long_context_integration, mathematical_induction, matrixshapes, modified_arithmetic, multistep_arithmetic, navigate, operators, physics, physics_questions, program_synthesis, roots_optimization_and_games, simple_arithmetic, simple_arithmetic_json, simple_arithmetic_json_multiple_choice, simple_arithmetic_json_subtasks, simple_arithmetic_multiple_targets_json, unit_conversion, unnatural_in_context_learning, vitaminc_fact_verification
+
+arithmetic
+measures model's ability to perform arithmetic
+
+Tasks: arithmetic, chinese_remainder_theorem, dyck_languages, dynamic_counting, elementary_math_qa, evaluating_information_essentiality, intersect_geometry, matrixshapes, modified_arithmetic, multistep_arithmetic, navigate, repeat_copy_logic, simple_arithmetic, simple_arithmetic_json, simple_arithmetic_json_multiple_choice, simple_arithmetic_json_subtasks, simple_arithmetic_multiple_targets_json, simple_text_editing, unit_conversion, unit_interpretation, unnatural_in_context_learning, vitaminc_fact_verification
+
+algebra
+measures model's ability to perform algebra
+
+Tasks: boolean_expressions, chinese_remainder_theorem, dyck_languages, dynamic_counting, evaluating_information_essentiality, roots_optimization_and_games
+
+mathematical proof
+measures model's ability to derive or understand a mathematical proof
+
+Tasks: identify_math_theorems, key_value_maps, mathematical_induction
+
+decomposition
+tests model's ability to break problems down into simpler subproblems
+
+Tasks: analytic_entailment, evaluating_information_essentiality, forecasting_subquestions, tracking_shuffled_objects
+
+fallacy
+measure's model's ability to distinguish correct from fallacious reasoning
+
+Tasks: analytic_entailment, conceptual_combinations, crass_ai, formal_fallacies_syllogisms_negation
+
+negation
+measure's model's ability to understand negation
+
+Tasks: analytic_entailment, formal_fallacies_syllogisms_negation, linguistic_mappings, salient_translation_error_detection
+
+computer code
+the task involves inputs or outputs that are computer code
+
+Tasks: auto_debugging, boolean_expressions, code_line_description, color, geometric_shapes, list_functions, program_synthesis, python_programming_challenge, self_awareness, semantic_parsing_in_context_sparc, semantic_parsing_spider, simp_turing_concept
+
+semantic parsing
+measure's model's ability to parse semantics of natural-language utterances
+
+Tasks: semantic_parsing_in_context_sparc, semantic_parsing_spider
+
+probabilistic reasoning
+the task involves probing the model’s ability to reason in the face of uncertainty
+
+Tasks: evaluating_information_essentiality

@@ -1,0 +1,34 @@
+### Problem Statement Start ###
+{task_problem}
+### Problem Statement End ###
+
+
+### Problem Reflection Start ###
+{problem_reflection}
+### Problem Reflection End ###
+
+You are an extremely powerful Meta-Expert with the unique ability to design a team of specialized experts and arrange those experts through a workflow to tackle and solve the above problem. Based on the above problem statement and its reflection analysis, please design a team of experts and orchestrate those experts to effectively address and solve the above problem.
+
+In particular, you are to do "Specialized Experts Design":
+  - Design a list of subject-matter experts (SMEs) including, but not limited to, Essayist Expert, Python Expert, Linguistic Analyst, Mathematician, Data Scientist, and various other Analysts. Each expert is only to perform one specific sub-task, such as processing data, making decisions, or utilizing Python tools.
+  - Arrange the experts to operate in a sequential workflow, meaning each expert's output becomes the input for the next, progressively moving towards the final answer. Avoid redundancy of functions across experts.
+  - Assign unique names to each expert and provide an clear description of their specific skills, knowledge, and the sub-tasks they are going to perform. Ensure the expert description is comprehensive and self-contained that encapsulates all important information and details from **Sub-tasks Identification**.
+  - For sub-tasks involving logical reasoning, mathematical operations, data structure manipulation, or programming-related challenges, you can outline strategic approaches and delegate the specifics of implementation to the Python expert (Tool). The Python expert will translate the instructions into code, execute it, and return the results. You can include multiple Python experts if needed. Please provide explicit implementation instructions to the Python expert(s).
+  - Conclude each expert's description with a name card in JSON format, summarizing key attributes. Specify the type of each expert as either 'LLM' for those based on Large Language Model or 'Tool' for those utilizing Python tools.
+  - The final expert should be responsible for reviewing the findings of previous experts and then generating the final answer to the problem.
+
+Please strictly follow the example output format in your response. Below is an output example for the task "Sort the following words alphabetically: List: thrill splutter panicking scorch same dot prod".
+
+=====
+
+### Specialized Experts Design start ###
+
+**String Manipulation Expert**: Specializes in parsing the given string into individual words. This expert will ensure that the input string is correctly converted into a list of words, which is essential for accurate sorting. Expert card (in JSON format): {"Name": "String Manipulation Expert", "Expert_Type": "LLM", "Input_Type": "str", "Output_Type": "List[str]"}
+
+**Python Expert of Sorting**: Skills in implementing the sorting algorithm. The Python expert will use Python's in-built sorting functions to efficiently sort the list of words and return the sorted list. Python is chosen for its robustness and simplicity in handling such tasks. Expert card (in JSON format): {"Name": "Python Expert of Sorting", "Expert_Type": "Tool", "Input_Type": "List[str]", "Output_Type": "List[str]"}
+
+**Formatting and Presentation Expert**: Specializes in formatting the sorted list for output. This expert ensures that the final presentation of the sorted list is readable and meets the requirements of the task. Expert card (in JSON format): {"Name": "Formatting and Presentation Expert", "Expert_Type": "LLM", "Input_Type": "List[str]", "Output_Type": "str"}
+
+### Specialized Experts Design end ###
+
+=====

@@ -1,0 +1,37 @@
+=====
+{task_problem}
+=====
+
+You are an extremely powerful Meta-Expert with the unique ability to design a team of experts and collaborate with multiple experts through a workflow graph to tackle any task and solve any complex problems. You will receive a problem query and you need to decompose the task into smaller, more manageable sub-tasks. Based on the identified sub-tasks, you should determine which experts are best suited to address each one. You can include experts to make decisions to do branching when necessary, allowing you to dynamically determine the next expert to execute based on the current state of the graph.
+
+Given the above problem, you have two tasks:
+1) Problem Reflection: Reflect on the problem, and describe it in your own words, in bullet points. Analyze how you can decompose the problem into smaller, more manageable sub-tasks. Pay attention to small details, nuances, notes and examples in the problem description. 
+
+2) Specialized Experts Design: 
+ - Generate a list of subject-matter experts (SMEs) including, but not limited to, Essayist Expert, Python Expert, Linguistic Analyst, Mathematician, Data Scientist, and other Analyst. Please assign different names to experts.
+ - Each expert is to perform specific sub-tasks, such as processing input, making decisions, or interacting with Python tools. Experts should work in a sequential order, meaning each expert should take the previous expert's output as input, move one step toward the solution and send the output to the next expert.
+ - For tasks involving logical reasoning, mathematical operations, or manipulating data structures, you can provide high-level strategies and then hand off the implementation details to the Python expert (Tool). The Python expert will receive the instructions from the LLM and translate them into Python code. This code will be designed to solve the assigned sub-task, potentially involving calculations, data manipulation, or other functionalities within Python's capabilities. The Python expert will then execute the code and return the results. 
+ - At the end of each expert, please generate a name card summarizing its key properties. Please also choose the type (either LLM or Tool) of each expert. 
+
+Please strictly follow the example output format in your response. Below is an output example for the task "Sort the following words alphabetically: List: thrill splutter panicking scorch same dot prod obstetric malton onus drumhead delmarva barn embezzle it&t damp guru subsist entirety greene". 
+
+=====
+### Problem Reflection start ###
+**Task Description**: Sort a list of words alphabetically.
+**Elements of the Task**:
+1. The list contains words of varying lengths and complexities.
+2. The task involves sorting, which is a fundamental operation in data organization.
+3. Alphabetical sorting requires comparing letters in the English alphabet.
+**Sub-tasks Identification**:
+1. Parsing the List: Isolating each word in the provided text string.
+2. Sorting Mechanism: Implementing an algorithm to sort the words alphabetically.
+3. Presentation: Formatting the sorted list for clear and concise output.
+### Problem Reflection end ###
+
+
+### Specialized Experts Design start ###
+**String Manipulation Expert**: Specializes in parsing the given string into individual words. This expert will ensure that the input string is correctly converted into a list of words, which is essential for accurate sorting. Expert card (in JSON format): {"Name": "String Manipulation Expert", "Expert_Type": "LLM", "Input_Type": "str", "Output_Type": "List[str]"}
+**Python Expert of Sorting**: Skills in implementing the sorting algorithm. The Python expert will use Python's in-built sorting functions to efficiently sort the list of words and return the sorted list. Python is chosen for its robustness and simplicity in handling such tasks. Expert card (in JSON format): {"Name": "Python Expert of Sorting", "Expert_Type": "Tool", "Input_Type": "List[str]", "Output_Type": "List[str]"}
+**Formatting and Presentation Expert**: Specializes in formatting the sorted list for output. This expert ensures that the final presentation of the sorted list is readable and meets the requirements of the task. Expert card (in JSON format): {"Name": "Formatting and Presentation Expert", "Expert_Type": "LLM", "Input_Type": "List[str]", "Output_Type": "str"}
+### Specialized Experts Design end ###
+=====

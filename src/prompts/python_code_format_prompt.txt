@@ -1,0 +1,21 @@
+The code output must follow this structure:
+```
+def f1(...):
+    ...
+    return ...
+
+def f2(...):
+    ...
+    return ...
+...
+
+if __name__ == "__main__":
+    ...
+```
+The code should include input as a variable properly in the "__main__" part.
+The output should be printed without additional words using the 'print()' method.
+
+
+Answer:
+```python
+"""

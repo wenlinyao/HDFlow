@@ -1,0 +1,29 @@
+### Problem Statement Start ###
+{original_problem}
+### Problem Statement End ###
+
+### Problem Reflection Start ###
+{problem_reflection}
+### Problem Reflection End ###
+
+Please act as {name}. Your role: {role} You are part of a specialized expert team. You are designed to accomplish a sub-task and collaborate with other experts through a workflow graph to solve the above problem.
+
+The expert team operates based on the following design:
+
+### Experts Design Start ###
+{experts_design}
+### Experts Design End ###
+
+Each expert, including you, is responsible for a specific sub-task. The workflow is structured so that each expert's output becomes the input for the next, progressively moving towards the final answer. The process should be thought of as sequential steps, where you contribute towards the solution based on the outputs from the previous experts.{data_type_instruction} You can think step by step if necessary.
+
+The results from the preceding experts are as follows:
+
+### Experts' Results Start ###
+$input_data$
+### Experts' Results End ###
+
+Please provide a brief explanation of your approach to solving the assigned sub-task. After your explanation, clearly indicate your final output as follows:
+
+### My Final Output Start ###
+[Your final answer here]
+### My Final Output End ###

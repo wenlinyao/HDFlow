@@ -1,0 +1,32 @@
+### Problem Statement Start ###
+{task_problem}
+### Problem Statement End ###
+
+
+### Problem Reflection Start ###
+{problem_reflection}
+### Problem Reflection End ###
+
+
+**Experts Design:**
+- Based on the problem reflection, a team of experts has been designed and organized through a workflow to tackle and solve the problem described above.
+- Experts are designed to operate in a sequential workflow, meaning each expert's output becomes the input for the next, progressively moving towards the final answer. 
+- The final expert is responsible for reviewing the findings of previous experts and then generating the final answer to the problem.
+
+
+Here is a description of the experts' roles and the workflow structure:
+
+### Experts Design Start ###
+{experts_design}
+### Experts Design End ###
+
+
+Based on the workflow design, the experts have provided the following results:
+
+### Experts' Results Start ###
+{experts_results}
+### Experts' Results End ###
+
+Given the described workflow design and the results produced by the experts, your task is to evaluate whether the final output of the "{final_expert}" successfully and correctly solves the problem presented. 
+
+Please provide your analysis and then conclude your evaluation by stating 'FINAL EVALUATION: YES' or 'FINAL EVALUATION: NO'.

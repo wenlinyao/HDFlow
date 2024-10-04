@@ -1,0 +1,104 @@
+=====
+{task_problem}
+=====
+
+Reflection and Experts Design:
+=====
+{reflection__experts_design}
+=====
+
+You are an extremely powerful Meta-Expert with the unique ability to coordinate a team of experts and collaborate with multiple experts through a workflow graph to tackle any task and solve any complex problems. Above are a problem query, problem reflection and the design of a team of subject-matter experts (SMEs). Based on the identified sub-tasks and expert roles, you should determine the dependency between those experts so that experts can be organized into a workflow to solve the given complex task. Each expert can take one or several experts' output as input, move one step toward the solution and send the output to one or several downstream experts. As the Meta-Export, you will act as the coordinator and orchestrate the efforts of the different experts to solve the complex problem.
+
+You have two tasks to accomplish:
+1) Dependency Design: Analyze and describe the potential pairwise dependencies and collaborations that might exist between experts. There are two possible integrations. Sequential dependencies: The workflow would require different experts to work in a sequential order. Conditional branching: The workflow would dynamically determine the next expert node to execute based on the current state of the graph. Explain how they contribute to solving the problem efficiently. Please output a list of dependency edges with the reasons of each dependency edge. For example: "A -> B (1 to 1 edge)", "A -> B/C (conditional edge)".
+
+2) Workflow Design: Please output the overall workflow of SMEs into a Python code (you should use the LangGraph package to define the graph). With this collaborative framework, you can tackle even the most complex reasoning tasks by combining powerful AI capabilities. LangGraph allows you to define chains of computation (Directed Acyclic Graphs or DAGs), LangGraph introduces the ability to add cycles, enabling more complex, agent-like behaviors where you can call an LLM in a loop, asking it what action to take next. Each node represents an expert (a computation step). Edges connect the nodes in your graph, defining the flow of computation. LangGraph supports conditional edges, allowing you to dynamically determine the next node to execute based on the current state of the graph. When you use conditional edges, remember to generate the router function.
+
+Here is one example of LangGraph usage:
+
+```python
+from langgraph.graph import END, StateGraph
+
+# Either agent can decide to end
+def router(state):
+    # This is the router
+    messages = state["messages"]
+    last_message = messages[-1]
+    if "function_call" in last_message.content:
+        # The previous agent is invoking a tool
+        return "call_tool"
+    if "FINAL ANSWER" in last_message.content:
+        # Any agent decides the work is done
+        return "end"
+    return "continue"
+
+workflow = StateGraph(AgentState)
+
+workflow.add_node("Researcher", research_node)
+workflow.add_node("Chart Generator", chart_node)
+workflow.add_node("call_tool", tool_node)
+
+workflow.add_conditional_edges(
+    "Researcher",
+    router,
+    {"continue": "Chart Generator", "call_tool": "call_tool", "end": END},
+)
+workflow.add_conditional_edges(
+    "Chart Generator",
+    router,
+    {"continue": "Researcher", "call_tool": "call_tool", "end": END},
+)
+
+workflow.add_conditional_edges(
+    "call_tool",
+    # Each agent node updates the 'sender' field
+    # the tool calling node does not, meaning
+    # this edge will route back to the original agent
+    # who invoked the tool
+    lambda x: x["sender"],
+    {
+        "Researcher": "Researcher",
+        "Chart Generator": "Chart Generator",
+    },
+)
+workflow.set_entry_point("Researcher")
+graph = workflow.compile()
+```
+
+Please strictly follow the example output format in your response. Below is an output example for the task "Sort the following words alphabetically: List: thrill splutter panicking scorch same dot prod obstetric malton onus drumhead delmarva barn embezzle it&t damp guru subsist entirety greene". 
+
+=====
+### Dependency Design start ###
+**String Manipulation Expert -> Python Expert (1 to 1 edge)**: The String Manipulation Expert will parse the input string into a list of words. This parsed list is essential for the Python Expert to perform the sorting task. Without this initial parsing, the Python Expert cannot apply the sorting algorithm correctly.
+**Python Expert -> Formatting and Presentation Expert (1 to 1 edge)**: After the Python Expert sorts the list of words, the Formatting and Presentation Expert will take this sorted list and format it for final output. The output from the Python Expert is directly used by the Formatting Expert to ensure the data is presented in a clear and reader-friendly manner.
+### Dependency Design end ###
+
+
+### Workflow Design start ###
+```python
+from langgraph.graph import END, StateGraph
+
+# Define a new graph
+workflow = StateGraph(AgentState)
+
+# Define the nodes
+workflow.add_node("string_manipulation_expert", string_manipulation_expert)
+workflow.add_node("python_expert", python_expert)
+workflow.add_node("formatting_and_presentation_expert", formatting_and_presentation_expert)
+
+# Set the entry point
+workflow.set_entry_point("string_manipulation_expert")
+
+# Edges
+workflow.add_edge("string_manipulation_expert", "python_expert")
+workflow.add_edge("python_expert", "formatting_and_presentation_expert")
+workflow.add_edge("formatting_and_presentation_expert", END)
+
+# Compile
+app = workflow.compile()
+
+# Use the compiled app
+final_output = app(input_string)
+```
+### Workflow Design end ###
+=====
